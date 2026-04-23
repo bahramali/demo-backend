@@ -13,7 +13,7 @@ public class PersonController {
     public DemoResponse demo(@RequestBody DemoRequest request) {
         return new DemoResponse(
                 request.name(),
-                request.personnelNumber() == null ? null : request.personnelNumber().asText(),
+                request.personnelNumber() == null ? null : String.valueOf(request.personnelNumber()),
                 "Request received successfully"
         );
     }
